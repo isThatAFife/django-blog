@@ -29,15 +29,13 @@ def about_me(request):
             collaborate = collaborate_form.save()
             collaborate.save()
             messages.add_message(
-                request, messages.SUCCESS,
-                'Collaboration request received! I endeavour to respond within 2 working days.'
+                request,
+                messages.SUCCESS,
+                "Collaboration request received! I endeavour to respond within 2 working days.",
             )
 
     return render(
         request,
         "about/about.html",
-        {
-            "about": about,
-            "collaborate_form": collaborate_form
-        },
+        {"about": about, "collaborate_form": collaborate_form},
     )
